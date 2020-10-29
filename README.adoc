@@ -1,3 +1,9 @@
 = Knative Homedir R/W service
 
 This service can list, read, and write files in homedir.
+
+== Container image
+
+```
+quay.io/cardil/knative-homedir
+```
