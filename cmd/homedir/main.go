@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/cardil/knative-homedir/internal/view/controller"
+	"github.com/cardil/homedir/internal/view/controller"
 )
 
 func main() {

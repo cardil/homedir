@@ -1,0 +1,7 @@
+FROM registry.access.redhat.com/ubi8/ubi-minimal
+COPY ./build/_output/bin/homedir /homedir
+RUN microdnf install shadow-utils 
+RUN useradd -m cloud
+WORKDIR /home/cloud
+USER cloud
+CMD ["/homedir"]

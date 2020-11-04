@@ -7,7 +7,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/cardil/knative-homedir/internal"
+	"github.com/cardil/homedir/internal"
 	"github.com/joho/godotenv"
 	"github.com/magefile/mage/mg"
 	"github.com/magefile/mage/sh"
@@ -25,14 +25,14 @@ var Default = magetasks.Binary
 func Publish() {
 	mg.Deps(Images)
 	if len(config.Binaries) > 0 {
-		t := tasks.StartMultiline("💿", "Publishing built OCI images")
+		t := tasks.StartMultiline("📤", "Publishing OCI images")
 		errs := make([]error, 0)
 		for _, binary := range config.Binaries {
 			args := []string{
 				"push", imagename(binary),
 			}
 			args = append(args)
-			err := sh.RunV("docker", args...)
+			err := sh.RunV("podman", args...)
 			errs = append(errs, err)
 		}
 		t.End(errs...)
@@ -44,17 +44,17 @@ func Images() {
 	mg.Deps(magetasks.Binary)
 
 	if len(config.Binaries) > 0 {
-		t := tasks.StartMultiline("💿", "Building OCI images")
+		t := tasks.StartMultiline("📦", "Packaging OCI images")
 		errs := make([]error, 0)
 		for _, binary := range config.Binaries {
 			args := []string{
 				"build",
-				"-f", dockerfile(binary),
+				"-f", containerfile(binary),
 				"-t", imagename(binary),
 				".",
 			}
 			args = append(args)
-			err := sh.RunV("docker", args...)
+			err := sh.RunV("podman", args...)
 			errs = append(errs, err)
 		}
 		t.End(errs...)
@@ -69,11 +69,11 @@ func init() {
 	config.Binaries = append(config.Binaries, config.Binary{
 		Name: internal.BinaryName,
 	})
-	config.VersionVariablePath = "github.com/cardil/knative-homedir/internal.Version"
+	config.VersionVariablePath = "github.com/cardil/homedir/internal.Version"
 }
 
-func dockerfile(bin config.Binary) string {
-	return path.Join("cmd", bin.Name, "Dockerfile")
+func containerfile(bin config.Binary) string {
+	return path.Join("cmd", bin.Name, "Containerfile")
 }
 
 func imagename(bin config.Binary) string {

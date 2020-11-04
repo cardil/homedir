@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/cardil/knative-homedir/internal/service/fs"
+	"github.com/cardil/homedir/internal/service/fs"
 )
 
 // List is a controller that list files as JSON.

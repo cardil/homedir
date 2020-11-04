@@ -5,5 +5,5 @@ This service can list, read, and write files in homedir.
 == Container image
 
 ```
-quay.io/cardil/knative-homedir
+quay.io/cardil/homedir
 ```

@@ -3,7 +3,7 @@ package fs
 import (
 	"io/ioutil"
 
-	"github.com/cardil/knative-homedir/internal/entity"
+	"github.com/cardil/homedir/internal/entity"
 	"github.com/mitchellh/go-homedir"
 )
 
