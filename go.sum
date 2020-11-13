@@ -25,6 +25,8 @@ github.com/wavesoftware/go-ensure v1.0.0 h1:6X3gQL5psBWwtu/H9a+69xQ+JGTUELaLhgOB
 github.com/wavesoftware/go-ensure v1.0.0/go.mod h1:K2UAFSwMTvpiRGay/M3aEYYuurcR8S4A6HkQlJPV8k4=
 github.com/wavesoftware/go-magetasks v0.2.0 h1:7F7kgAOs4r5kiatDPpWQk1voE1GT4UZr885NGg+mkS0=
 github.com/wavesoftware/go-magetasks v0.2.0/go.mod h1:TSJTd2vq3KCT9q9XTp648SbrXM/BRsqD6gSsYKeHk04=
+github.com/wavesoftware/go-magetasks v0.3.0 h1:2N/GPqNU1GiLhjbzF0FDHGVETJF4/+1jOuulHZU7zrA=
+github.com/wavesoftware/go-magetasks v0.3.0/go.mod h1:TSJTd2vq3KCT9q9XTp648SbrXM/BRsqD6gSsYKeHk04=
 golang.org/x/sys v0.0.0-20190222072716-a9d3bda3a223/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
 golang.org/x/sys v0.0.0-20191026070338-33540a1f6037 h1:YyJpGZS1sBuBCzLAR1VEpK193GlqGZbnPFnPV/5Rsb4=
 golang.org/x/sys v0.0.0-20191026070338-33540a1f6037/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
